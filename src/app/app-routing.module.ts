@@ -1,10 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BaseExampleComponent } from './components/subscribe/base-example/base-example.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: 'subscribe',
+    children: [
+      {
+        path: 'base-example',
+        component: BaseExampleComponent,
+      },
+    ],
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
