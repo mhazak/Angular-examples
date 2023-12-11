@@ -3,6 +3,7 @@ import { BaseExampleComponent } from './base-example.component';
 import { NgModule } from '@angular/core';
 import { BooksComponent } from './books/books.component';
 import { MagazinesComponent } from './magazines/magazines.component';
+import { BookComponent } from './books/book/book.component';
 
 export enum SubscribePages {
   BASE_EXAMPLE = 'base-example',
@@ -13,7 +14,16 @@ const routes: Routes = [
     path: SubscribePages.BASE_EXAMPLE,
     component: BaseExampleComponent,
     children: [
-      { path: 'books', component: BooksComponent },
+      {
+        path: 'books',
+        children: [
+          { path: '', pathMatch: 'full', component: BooksComponent },
+          {
+            path: ':bookId',
+            component: BookComponent,
+          },
+        ],
+      },
       { path: 'magazine', component: MagazinesComponent },
     ],
   },

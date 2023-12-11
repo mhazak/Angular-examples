@@ -1,40 +1,22 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { EMPTY, Subscription, catchError } from 'rxjs';
-import { Book } from 'src/app/models/book.interface';
+import { Component } from '@angular/core';
+import { EMPTY, catchError, tap } from 'rxjs';
 import { BookService } from 'src/app/services/book.service';
 
 @Component({
   selector: 'app-books',
-  templateUrl: './books.component.html',
+  template: `
+    <ng-container *ngIf="books$ | async as books">
+      <h1>Total books: {{ books?.length }}</h1>
+      <pre>{{ books | json }}</pre>
+      <app-buttons></app-buttons>
+    </ng-container>
+  `,
   styleUrls: ['./books.component.css'],
 })
-export class BooksComponent implements OnInit, OnDestroy {
-  books: Book[] = [];
-
-  subscriptions: Subscription[] = [];
+export class BooksComponent {
+  books$ = this.bookService.getBooks().pipe(
+    tap(() => console.log('I have been subscribed!')),
+    catchError(() => EMPTY)
+  );
   constructor(private readonly bookService: BookService) {}
-
-  ngOnInit() {
-    this.subscriptions.push(
-      this.bookService
-        .getBooks()
-        .pipe(catchError(() => EMPTY))
-        .subscribe({
-          next: (books) => {
-            console.log('Observable emits next value', books);
-            this.books = books;
-          },
-          error: (err) => {
-            console.error('Error occurs', err);
-          },
-          complete: () => {
-            console.log('Observable completed, unsubscribing!');
-          },
-        })
-    );
-  }
-
-  ngOnDestroy(): void {
-    this.subscriptions.forEach((subscription) => subscription.unsubscribe());
-  }
 }
