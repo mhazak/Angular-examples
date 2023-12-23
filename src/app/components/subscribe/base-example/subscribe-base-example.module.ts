@@ -8,6 +8,7 @@ import { AppBaseExampleRoutingModule } from './base-example.routing';
 import { BookComponent } from './books/book/book.component';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { ButtonModule } from 'primeng/button';
+import { TakeUntilComponent } from './takeUntil/takeUntil.component';
 
 @NgModule({
   imports: [
@@ -23,6 +24,7 @@ import { ButtonModule } from 'primeng/button';
     BooksComponent,
     BookComponent,
     ButtonsComponent,
+    TakeUntilComponent,
   ],
 })
 export class SubscribeBaseExampleModule {}

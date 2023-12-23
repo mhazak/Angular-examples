@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { BooksComponent } from './books/books.component';
 import { MagazinesComponent } from './magazines/magazines.component';
 import { BookComponent } from './books/book/book.component';
+import { TakeUntilComponent } from './takeUntil/takeUntil.component';
 
 export enum SubscribePages {
   BASE_EXAMPLE = 'base-example',
@@ -24,6 +25,7 @@ const routes: Routes = [
           },
         ],
       },
+      { path: 'take-until', component: TakeUntilComponent },
       { path: 'magazine', component: MagazinesComponent },
     ],
   },

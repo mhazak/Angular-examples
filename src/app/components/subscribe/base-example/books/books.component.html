@@ -8,12 +8,12 @@
         <th>Date</th>
       </tr>
     </ng-template>
-    <ng-template pTemplate="body" let-magazine>
-      <tr>
-        <td>{{ magazine.id }}</td>
-        <td>{{ magazine.name }}</td>
-        <td>{{ magazine.author }}</td>
-        <td>{{ magazine.releaseDate | date : "dd. MM. yyyy" }}</td>
+    <ng-template pTemplate="body" let-book>
+      <tr #tableRow [id]="book.id">
+        <td>{{ book.id }}</td>
+        <td>{{ book.name }}</td>
+        <td>{{ book.author }}</td>
+        <td>{{ book.releaseDate | date : "dd. MM. yyyy" }}</td>
       </tr>
     </ng-template>
   </p-table>
