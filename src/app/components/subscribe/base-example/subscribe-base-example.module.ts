@@ -9,6 +9,7 @@ import { BookComponent } from './books/book/book.component';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { ButtonModule } from 'primeng/button';
 import { TakeUntilComponent } from './takeUntil/takeUntil.component';
+import { ImperativeComponent } from './books/imperative/imperative.component';
 
 @NgModule({
   imports: [
@@ -25,6 +26,7 @@ import { TakeUntilComponent } from './takeUntil/takeUntil.component';
     BookComponent,
     ButtonsComponent,
     TakeUntilComponent,
+    ImperativeComponent,
   ],
 })
 export class SubscribeBaseExampleModule {}

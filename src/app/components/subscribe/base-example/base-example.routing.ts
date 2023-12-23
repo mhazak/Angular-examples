@@ -5,6 +5,7 @@ import { BooksComponent } from './books/books.component';
 import { MagazinesComponent } from './magazines/magazines.component';
 import { BookComponent } from './books/book/book.component';
 import { TakeUntilComponent } from './takeUntil/takeUntil.component';
+import { ImperativeComponent } from './books/imperative/imperative.component';
 
 export enum SubscribePages {
   BASE_EXAMPLE = 'base-example',
@@ -24,6 +25,11 @@ const routes: Routes = [
             component: BookComponent,
           },
         ],
+      },
+      {
+        path: 'imperative',
+        pathMatch: 'full',
+        component: ImperativeComponent,
       },
       { path: 'take-until', component: TakeUntilComponent },
       { path: 'magazine', component: MagazinesComponent },

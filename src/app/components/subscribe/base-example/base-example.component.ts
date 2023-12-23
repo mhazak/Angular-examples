@@ -8,6 +8,11 @@ import { MenuItem } from 'primeng/api';
 })
 export class BaseExampleComponent implements OnInit {
   items: MenuItem[] = [
+    {
+      label: 'Imperative',
+      icon: 'pi pi-fw pi-home',
+      routerLink: 'imperative',
+    },
     { label: 'Books', icon: 'pi pi-fw pi-home', routerLink: 'books' },
     { label: 'Take Until', icon: 'pi pi-fw pi-home', routerLink: 'take-until' },
     {
