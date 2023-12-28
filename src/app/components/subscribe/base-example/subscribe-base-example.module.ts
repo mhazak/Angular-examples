@@ -10,6 +10,10 @@ import { ButtonsComponent } from './buttons/buttons.component';
 import { ButtonModule } from 'primeng/button';
 import { TakeUntilComponent } from './takeUntil/takeUntil.component';
 import { ImperativeComponent } from './books/imperative/imperative.component';
+import { FormSubscriptionComponent } from './form-subscription/form-subscription.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { InputTextModule } from 'primeng/inputtext';
+import { InputNumberModule } from 'primeng/inputnumber';
 
 @NgModule({
   imports: [
@@ -18,6 +22,9 @@ import { ImperativeComponent } from './books/imperative/imperative.component';
     ButtonModule,
     SharedModule,
     AppBaseExampleRoutingModule,
+    ReactiveFormsModule,
+    InputTextModule,
+    InputNumberModule,
   ],
   declarations: [
     BaseExampleComponent,
@@ -27,6 +34,7 @@ import { ImperativeComponent } from './books/imperative/imperative.component';
     ButtonsComponent,
     TakeUntilComponent,
     ImperativeComponent,
+    FormSubscriptionComponent,
   ],
 })
 export class SubscribeBaseExampleModule {}
