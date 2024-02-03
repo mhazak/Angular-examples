@@ -14,6 +14,8 @@ import { FormSubscriptionComponent } from './form-subscription/form-subscription
 import { ReactiveFormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputNumberModule } from 'primeng/inputnumber';
+import { ManuallyUnsubscribeComponent } from './manually-unsubscribe.component';
+import { AutomaticallyUnsubscribeComponent } from './automatically-unsubscribe.component';
 
 @NgModule({
   imports: [
@@ -35,6 +37,8 @@ import { InputNumberModule } from 'primeng/inputnumber';
     TakeUntilComponent,
     ImperativeComponent,
     FormSubscriptionComponent,
+    ManuallyUnsubscribeComponent,
+    AutomaticallyUnsubscribeComponent,
   ],
 })
 export class SubscribeBaseExampleModule {}

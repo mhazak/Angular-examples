@@ -7,6 +7,8 @@ import { BookComponent } from './books/book/book.component';
 import { TakeUntilComponent } from './takeUntil/takeUntil.component';
 import { ImperativeComponent } from './books/imperative/imperative.component';
 import { FormSubscriptionComponent } from './form-subscription/form-subscription.component';
+import { ManuallyUnsubscribeComponent } from './manually-unsubscribe.component';
+import { AutomaticallyUnsubscribeComponent } from './automatically-unsubscribe.component';
 
 export enum SubscribePages {
   BASE_EXAMPLE = 'base-example',
@@ -32,6 +34,8 @@ const routes: Routes = [
         pathMatch: 'full',
         component: ImperativeComponent,
       },
+      { path: 'manually', component: ManuallyUnsubscribeComponent },
+      { path: 'automatically', component: AutomaticallyUnsubscribeComponent },
       {
         path: 'form-subscription',
         component: FormSubscriptionComponent,

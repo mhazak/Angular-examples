@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { fromEvent, take } from 'rxjs';
+import { fromEvent } from 'rxjs';
 
 @Component({
   selector: 'app-takeUntil',

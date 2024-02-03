@@ -13,7 +13,9 @@ export class BaseExampleComponent implements OnInit {
       icon: 'pi pi-fw pi-home',
       routerLink: 'imperative',
     },
-    { label: 'Form', routerLink: 'form-subscription' },
+    { label: 'Manually', routerLink: 'manually' },
+    { label: 'Automatically', routerLink: 'automatically' },
+    // { label: 'Form', routerLink: 'form-subscription' },
     { label: 'Books', icon: 'pi pi-fw pi-home', routerLink: 'books' },
     { label: 'Take Until', icon: 'pi pi-fw pi-home', routerLink: 'take-until' },
     {

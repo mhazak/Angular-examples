@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { finalize } from 'rxjs';
+import { finalize, startWith } from 'rxjs';
 
 @Component({
   selector: 'app-form-subscription',
@@ -16,7 +16,10 @@ export class FormSubscriptionComponent implements OnInit {
   ngOnInit() {
     console.log('Ng OnInit');
     this.formGroup.controls.name.valueChanges
-      .pipe(finalize(() => console.log('finalize')))
+      .pipe(
+        startWith('Joe'),
+        finalize(() => console.log('finalize'))
+      )
       .subscribe((val) => {
         console.log('New name ', val);
       });
