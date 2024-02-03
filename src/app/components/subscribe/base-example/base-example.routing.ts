@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { BooksComponent } from './books/books.component';
 import { MagazinesComponent } from './magazines/magazines.component';
 import { BookComponent } from './books/book/book.component';
-import { TakeUntilComponent } from './takeUntil/takeUntil.component';
+import { TakeUntilComponent } from './takeUntil.component';
 import { ImperativeComponent } from './books/imperative/imperative.component';
 import { FormSubscriptionComponent } from './form-subscription/form-subscription.component';
 import { ManuallyUnsubscribeComponent } from './manually-unsubscribe.component';

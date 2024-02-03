@@ -8,7 +8,7 @@ import { AppBaseExampleRoutingModule } from './base-example.routing';
 import { BookComponent } from './books/book/book.component';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { ButtonModule } from 'primeng/button';
-import { TakeUntilComponent } from './takeUntil/takeUntil.component';
+import { TakeUntilComponent } from './takeUntil.component';
 import { ImperativeComponent } from './books/imperative/imperative.component';
 import { FormSubscriptionComponent } from './form-subscription/form-subscription.component';
 import { ReactiveFormsModule } from '@angular/forms';
