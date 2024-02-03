@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Subject, combineLatest, finalize, startWith, takeUntil } from 'rxjs';
+import { Subject, combineLatest, finalize, startWith } from 'rxjs';
 
 @Component({
   selector: 'app-takeUntil',
@@ -24,7 +25,7 @@ export class TakeUntilComponent implements OnInit, OnDestroy {
       this.formGroup.controls.surname.valueChanges.pipe(startWith('')),
     ])
       .pipe(
-        takeUntil(this.destroy$),
+        takeUntilDestroyed(),
         finalize(() => console.log('UNSUBSCRIBED'))
       )
       .subscribe(([name, surname]) => {
