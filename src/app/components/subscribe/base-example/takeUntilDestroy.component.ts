@@ -1,10 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DestroyRef, OnInit, inject } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Subject, combineLatest, startWith, takeUntil, finalize } from 'rxjs';
+import { combineLatest, startWith, finalize } from 'rxjs';
 
 @Component({
   selector: 'app-takeUntilDestroy',
-  template: `abc`,
+  template: `<form [formGroup]="formGroup">
+    <input pInputText placeholder="Name" formControlName="name" />
+    <input pInputText placeholder="Surname" formControlName="surname" />
+    <input pInputText placeholder="Email" formControlName="email" />
+  </form>`,
 })
 export class TakeUntilDestroyComponent implements OnInit {
   formGroup = new FormGroup({
@@ -12,7 +17,8 @@ export class TakeUntilDestroyComponent implements OnInit {
     surname: new FormControl(''),
     email: new FormControl('', Validators.email),
   });
-  destroy$ = new Subject<void>();
+
+  destroyRef = inject(DestroyRef);
 
   ngOnInit(): void {
     combineLatest([
@@ -20,7 +26,7 @@ export class TakeUntilDestroyComponent implements OnInit {
       this.formGroup.controls.surname.valueChanges.pipe(startWith('')),
     ])
       .pipe(
-        takeUntil(this.destroy$),
+        takeUntilDestroyed(this.destroyRef),
         finalize(() => console.log('UNSUBSCRIBED'))
       )
       .subscribe(([name, surname]) => {
@@ -28,10 +34,5 @@ export class TakeUntilDestroyComponent implements OnInit {
           `${name?.toLowerCase()}.${surname?.toLowerCase()}@gmail.com`
         );
       });
-  }
-
-  ngOnDestroy(): void {
-    this.destroy$.next();
-    this.destroy$.complete();
   }
 }

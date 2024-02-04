@@ -16,6 +16,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { ManuallyUnsubscribeComponent } from './manually-unsubscribe.component';
 import { AutomaticallyUnsubscribeComponent } from './automatically-unsubscribe.component';
+import { TakeUntilDestroyComponent } from './takeUntilDestroy.component';
 
 @NgModule({
   imports: [
@@ -39,6 +40,7 @@ import { AutomaticallyUnsubscribeComponent } from './automatically-unsubscribe.c
     FormSubscriptionComponent,
     ManuallyUnsubscribeComponent,
     AutomaticallyUnsubscribeComponent,
+    TakeUntilDestroyComponent,
   ],
 })
 export class SubscribeBaseExampleModule {}

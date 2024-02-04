@@ -9,6 +9,7 @@ import { ImperativeComponent } from './books/imperative/imperative.component';
 import { FormSubscriptionComponent } from './form-subscription/form-subscription.component';
 import { ManuallyUnsubscribeComponent } from './manually-unsubscribe.component';
 import { AutomaticallyUnsubscribeComponent } from './automatically-unsubscribe.component';
+import { TakeUntilDestroyComponent } from './takeUntilDestroy.component';
 
 export enum SubscribePages {
   BASE_EXAMPLE = 'base-example',
@@ -41,6 +42,7 @@ const routes: Routes = [
         component: FormSubscriptionComponent,
       },
       { path: 'take-until', component: TakeUntilComponent },
+      { path: 'take-until-destroy', component: TakeUntilDestroyComponent },
       { path: 'magazine', component: MagazinesComponent },
     ],
   },

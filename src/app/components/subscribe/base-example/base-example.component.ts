@@ -17,12 +17,17 @@ export class BaseExampleComponent implements OnInit {
     { label: 'Automatically', routerLink: 'automatically' },
     // { label: 'Form', routerLink: 'form-subscription' },
     { label: 'Books', icon: 'pi pi-fw pi-home', routerLink: 'books' },
-    { label: 'Take Until', icon: 'pi pi-fw pi-home', routerLink: 'take-until' },
     {
-      label: 'Magazines',
-      icon: 'pi pi-fw pi-calendar',
-      routerLink: 'magazine',
+      label: 'Take Until Destroy',
+      icon: 'pi pi-fw pi-home',
+      routerLink: 'take-until-destroy',
     },
+    { label: 'Take Until', icon: 'pi pi-fw pi-home', routerLink: 'take-until' },
+    // {
+    //   label: 'Magazines',
+    //   icon: 'pi pi-fw pi-calendar',
+    //   routerLink: 'magazine',
+    // },
   ];
   constructor() {}
 
